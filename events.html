@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events_Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/EffectComposer.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/RenderPass.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/ShaderPass.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/CopyShader.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/LuminosityHighPassShader.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68819/UnrealBloomPass.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"></script>
+  
+  <script src="./js/events.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/events.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174908567-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174908567-1');
+</script>
+
+</head>
+<style>
+  ::-webkit-scrollbar {
+   display: none;
+    }
+    *{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    }
+  .gsap-marker-end{
+    opacity: 0;
+  }
+  .gsap-marker-start{
+    opacity: 0;
+    
+  }
+  .gsap-marker-scroller-end{
+    opacity: 0;
+  }
+  .gsap-marker-scroller-start{
+    opacity: 0;
+  }
+</style>
+<body>
+  
+  <canvas class="experience"></canvas>
+  <div class="scrollTarget"></div>
+  <div class="vignette-radial"></div>
+  
+  <!-- code for navigation bar -->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html"><b>HOME</b></a>
+    <a href="index.html"><b>ABOUT</b></a>
+    <a href="team.html"><b>TEAM</b></a>
+     
+    <div class="dropdown" class="active">
+      <button class="dropbtn"><b>Events</b> 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="events.html"><b>Upcoming Events</a>
+        <a href="#"><b>Past Events</a>
+        </div>
+      </div> </b>
+      <a href="contact.html"><b>Contact-us</b></a>
+      <!-- <a href="/aero/gallery/"><b>GALLERY</b></a>
+      <a href="/aero/events/" class="active"><b>EVENTS</b></a> -->
+      <!-- <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="myFunction()">&#9776;</a> -->
+    </div>
+    
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    
+    <!-- code for texts -->
+    <div id="overlay1" onclick="off1()">
+      <div id="text1" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay2" onclick="off2()">
+      <div id="text2" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="/static/aero/img/PLUTO%20X%201.jpg" alt="PLUTO-X" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/PLUTO%20X%203.jpg"alt="PLUTO-X" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/PLUTO%20X%205.jpg"alt="PLUTO-X" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay3" onclick="off3()">
+      <div id="text3" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="/static/aero/img/AIRSHOW%201.JPG" alt="AIRSHOW" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/AIRSHOW%203.JPG" alt="AIRSHOW" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/AIRSHOW%204.JPG" alt="AIRSHOW" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay4" onclick="off4()">
+      <div id="text4" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="/static/aero/img/glider%202.jpg" alt="GLIDER WORKSHOP" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/GLIDER%203.jpg" alt="GLIDER WORKSHOP" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/GLIDER%205.jpg" alt="GLIDER WORKSHOP" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay5" onclick="off5()">
+      <div id="text5" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.         <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="/static/aero/img/drone%20fly%201.jpg" alt="DRONE FLY" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/drone%20fly%202.jpg" alt="DRONE FLY" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/drone%20fly%203.JPG" alt="DRONE FLY" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay6" onclick="off6()">
+      <div id="text6" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        For more information about this event click <a href="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000">here</a>. 
+        <br><br>
+        
+      </div>
+    </div>
+    <div id="overlay7" onclick="off7()">
+      <div id="text7" class="character">
+        <br>
+        <div class="row">
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay8" onclick="off8()">
+      <div id="text8" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://img.freepik.com/premium-vector/caution-work-progress-icon-isolated-white-background-vector-illustration-design_769200-443.jpg?w=2000" alt="DYNAMIC CLUB" style="width:100%">
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div id="overlay9" onclick="off9()">
+      <div id="text9" class="character">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        <br><br>
+        
+        
+      </div>
+    </div>
+    <!-- <div id="overlay10" onclick="off10()">
+      <div id="text10" class="character">
+        Box kite event was conducted on the auspicious festival of Makar Sankranti where students build their own kites. Box kite is known to have the maximum lift and is the only kite in which man has successfully tried to fly.
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <img src="/static/aero/img/BOX%20KITE%201.jpg" alt="BOX KITE" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/BOX%20KITE%203.jpg" alt="BOX KITE" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/static/aero/img/BOX%20KITE%204.jpg" alt="BOX KITE" style="width:100%">
+          </div>
+        </div> -->
+        
+        
+      </div>
+    </div>
+    
+    <div id="div1" class="example" onclick="on1()">Dynamic Club events</div>
+    <div id="div2" class="example" onclick="on2()">ipr day</div>
+    <div id="div3" class="example" onclick="on3()">c++ bootcamp</div>
+    <div id="div4" class="example" onclick="on4()">national marine day</div>
+    <div id="div5" class="example" onclick="on5()">c bootcamp</div>
+    <div id="div6" class="example" onclick="on6()">expert session</div>
+    <div id="div7" class="example" onclick="on7()">typing competition</div>
+    <div id="div8" class="example" onclick="on8()">janjatiya gaurav divas</div>
+    <div id="div9" class="example" onclick="on9()">View More</div>
+    <div id="div10" class="example" onclick="on10()"></div>
+    
+    <script>
+      function on1() {
+        document.getElementById("overlay1").style.display = "block";
+      }
+      
+      function off1() {
+        document.getElementById("overlay1").style.display = "none";
+      }
+      function on2() {
+        document.getElementById("overlay2").style.display = "block";
+      }
+      
+      function off2() {
+        document.getElementById("overlay2").style.display = "none";
+      }
+      function on3() {
+        document.getElementById("overlay3").style.display = "block";
+      }
+      
+      function off3() {
+        document.getElementById("overlay3").style.display = "none";
+      }
+      function on4() {
+        document.getElementById("overlay4").style.display = "block";
+      }
+      
+      function off4() {
+        document.getElementById("overlay4").style.display = "none";
+      }
+      function on5() {
+        document.getElementById("overlay5").style.display = "block";
+      }
+      
+      function off5() {
+        document.getElementById("overlay5").style.display = "none";
+      }
+      function on6() {
+        document.getElementById("overlay6").style.display = "block";
+      }
+      
+      function off6() {
+        document.getElementById("overlay6").style.display = "none";
+      }
+      function on7() {
+        document.getElementById("overlay7").style.display = "block";
+      }
+      
+      function off7() {
+        document.getElementById("overlay7").style.display = "none";
+      }
+      function on8() {
+        document.getElementById("overlay8").style.display = "block";
+      }
+      
+      function off8() {
+        document.getElementById("overlay8").style.display = "none";
+      }
+      function on9() {
+        document.getElementById("overlay9").style.display = "block";
+      }
+      
+      function off9() {
+        document.getElementById("overlay9").style.display = "none";
+      }
+      function on10() {
+        document.getElementById("overlay10").style.display = "block";
+      }
+      
+      function off10() {
+        document.getElementById("overlay10").style.display = "none";
+      }
+    </script>
+    
+  </body>
+</body>
+</html>
