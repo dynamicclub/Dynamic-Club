@@ -109,9 +109,21 @@ gtag('config', 'UA-174908567-1');
 </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <style>
+      #preloader {
+        background:rgb(10, 10, 10) url("https://cdn.dribbble.com/users/4011649/screenshots/10677615/gif_girando_c_rculo3.gif") no-repeat center center;
+        background-size: 20%;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 999999;
+      }
+      </style>
 
-<body style="background: black!important;">    
+  </head>
+
+<body style="background: black!important;" onload="myFunction()">    
+  <div id="preloader"></div>
     <style>
 svg{
 color:white;
@@ -213,6 +225,17 @@ font-family: sans-serif;
             </div>
           </div>
         </div>
-      </div>      
+      </div>
+      
+      
+      <script>
+
+        var loader = document.getElementById("preloader");
+    
+        function myFunction() {
+          preloader.style.display = "none";
+        }
+      </script>
+      
 </body>
 </html>
