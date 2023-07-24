@@ -112,11 +112,24 @@ gtag('config', 'UA-174908567-1');
 </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #preloader {
+          background:rgb(10, 10, 10) url("./assets/preloader.gif") no-repeat center center;
+          background-size: 70%;
+          height: 100vh;
+          width: 100%;
+          position: fixed;
+          z-index: 999999;
+        }
+        </style>
+
 </head>
 
-<body style="background: black!important;">
+<body style="background: black!important;" onload="myFunction()">    
+    <div id="preloader"></div>
     
-    <img src = "../../static/aero/css/images/background.png" class = 'bg'>
+    <img src = "./assets/preloader.gif" class = 'bg'>
     
     <style>
 svg{
@@ -343,6 +356,15 @@ font-family: sans-serif;
         </div>
     </div>
     
+    <script>
+
+        var loader = document.getElementById("preloader");
+    
+        function myFunction() {
+          preloader.style.display = "none";
+        }
+      </script>
+
 </body>
 </html>
     

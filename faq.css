@@ -3,14 +3,14 @@
 --------------------------------------------------------------*/
 #faq {
   padding: 80px 0;
-  background-image: url("background/abt-bg1.webp");
+  background-image: url("https://e0.pxfuel.com/wallpapers/671/413/desktop-wallpaper-macos-monterey-variations-in-light-and-dark-mode-thumbnail.jpg");
   background-size: cover;
   position: relative;
 }
 #faq h1 {
   color: #5942e9 !important;
   font-weight: bold;
-  text-shadow: 0 0 1px black;
+  text-shadow: 0 0 1px rgb(248, 10, 109);
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
 }
@@ -31,7 +31,7 @@
 }
 
 .faq .faq-list li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   margin-bottom: 20px;
   padding: 20px;
 }
@@ -57,7 +57,7 @@
 .faq .faq-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
-  color: rgb(0, 0, 0);
+  color: rgb(218, 216, 221);
   font-weight: 500;
   font-style: italic;
 }
@@ -67,11 +67,11 @@
 }
 
 .faq .faq-list a.collapsed {
-  color: #272728;
+  color: #f3fbfb;
 }
 
 .faq .faq-list a.collapsed:hover {
-  color: #5942e9;
+  color: rgb(86, 9, 230x);
 }
 
 .faq .faq-list a.collapsed .icon-show {

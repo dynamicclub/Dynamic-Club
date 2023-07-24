@@ -40,6 +40,17 @@
   gtag('config', 'UA-174908567-1');
 </script>
 
+<style>
+  #preloader {
+    background:rgb(10, 10, 10) url("./assets/preloader.gif") no-repeat center center;
+    background-size: 70%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+  }
+  </style>
+
 </head>
 <style>
   ::-webkit-scrollbar {
@@ -63,7 +74,9 @@
     opacity: 0;
   }
 </style>
-<body>
+
+<body style="background: black!important;" onload="myFunction()">    
+  <div id="preloader"></div>
   
   <canvas class="experience"></canvas>
   <div class="scrollTarget"></div>
@@ -369,5 +382,16 @@
     </script>
     
   </body>
+
+  <script>
+
+    var loader = document.getElementById("preloader");
+
+    function myFunction() {
+      preloader.style.display = "none";
+    }
+  </script>
+
+  
 </body>
 </html>
