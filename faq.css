@@ -1,0 +1,83 @@
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+#faq {
+  padding: 80px 0;
+  background-image: url("background/abt-bg1.webp");
+  background-size: cover;
+  position: relative;
+}
+#faq h1 {
+  color: #5942e9 !important;
+  font-weight: bold;
+  text-shadow: 0 0 1px black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+}
+#faq hr {
+  margin-bottom: 50px;
+}
+.faq .faq-list {
+  padding: 0;
+  list-style: none;
+}
+.faqs {
+  transition: 0.3s ease-in-out;
+}
+
+.faqs:hover {
+  transition: 0.3s ease-in-out;
+  box-shadow: rgba(137, 119, 212, 0.456) 0px 5px 15px;
+}
+
+.faq .faq-list li {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: #5942e9;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 900;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.faq .faq-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #272728;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #5942e9;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
