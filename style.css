@@ -1248,10 +1248,10 @@ hr {
       background-color: #0072b1;
       color: #ffffff;
     }
-    .wrapper .telegram:hover,
-    .wrapper .telegram:hover .tooltip,
-    .wrapper .telegram:hover .tooltip::before {
-      background-color: #0088cc;
+    .wrapper .gmail:hover,
+    .wrapper .gmail:hover .tooltip,
+    .wrapper .gmail:hover .tooltip::before {
+      background-color: #4285F4;
       color: #ffffff;
     }
     
